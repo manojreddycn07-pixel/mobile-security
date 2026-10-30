@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050a12" />
+  <title>CyberGuard | Mobile Phishing Attack Shield</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="orbit orbit-one"></div>
+  <div class="orbit orbit-two"></div>
+
+  <!-- Welcome screen inspired by the first phone in the supplied reference image -->
+  <main id="welcomeScreen" class="welcome-screen">
+    <div class="welcome-topbar">
+      <div class="brand-lockup">
+        <div class="brand-mark"><span class="shield-symbol">◆</span></div>
+        <span>CYBER<span class="brand-accent">GUARD</span></span>
+      </div>
+      <div class="demo-badge"><span class="status-dot"></span> SECURITY DEMO</div>
+    </div>
+
+    <section class="welcome-content">
+      <div class="welcome-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> MOBILE THREAT PROTECTION</p>
+        <h1>CyberGuard<br /><span>Phishing Attack Shield</span></h1>
+        <p class="welcome-description">Spot suspicious links. Understand mobile threats. Stay one step ahead of cybercrime.</p>
+        <div class="welcome-points">
+          <div><span class="point-check">✓</span> URL risk checks</div>
+          <div><span class="point-check">✓</span> SMS phishing awareness</div>
+          <div><span class="point-check">✓</span> Security activity dashboard</div>
+        </div>
+        <button id="getStartedBtn" class="primary-button welcome-button">Get Started <span aria-hidden="true">↗</span></button>
+        <p class="safe-note"><span class="tiny-lock">♢</span> A safe educational simulator — no device access required.</p>
+      </div>
+
+      <div class="hero-art" aria-label="Decorative cybersecurity shield illustration">
+        <div class="hero-ring ring-back"></div>
+        <div class="hero-ring ring-middle"></div>
+        <div class="hero-ring ring-front"></div>
+        <div class="hero-pulse pulse-one"></div>
+        <div class="hero-pulse pulse-two"></div>
+        <div class="hero-shield">
+          <svg viewBox="0 0 180 205" role="img" aria-label="Shield and keyhole">
+            <defs>
+              <linearGradient id="shieldGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#50fff0" />
+                <stop offset="52%" stop-color="#00aaff" />
+                <stop offset="100%" stop-color="#536dff" />
+              </linearGradient>
+              <filter id="neonGlow"><feGaussianBlur stdDeviation="3.2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <path d="M90 9 L151 34 V87 C151 132 126 166 90 192 C54 166 29 132 29 87 V34 Z" fill="rgba(0,190,255,.08)" stroke="url(#shieldGradient)" stroke-width="3" filter="url(#neonGlow)" />
+            <path d="M90 24 L137 43 V86 C137 121 118 149 90 171 C62 149 43 121 43 86 V43 Z" fill="none" stroke="#00cfff" stroke-opacity=".45" stroke-width="1.2" stroke-dasharray="3 5" />
+            <circle cx="90" cy="88" r="19" fill="none" stroke="#52fff0" stroke-width="3" />
+            <path d="M82 104 L98 104 L102 131 L78 131 Z" fill="#52fff0" />
+            <path d="M90 107 V122" stroke="#03202a" stroke-width="4" stroke-linecap="round" />
+            <path d="M30 60 L15 60 M150 60 L165 60 M90 10 V0 M90 192 V202" stroke="#00d7f5" stroke-width="2" stroke-linecap="round" opacity=".8" />
+          </svg>
+        </div>
+        <div class="floating-chip chip-left"><span class="chip-light"></span> LINK CHECK</div>
+        <div class="floating-chip chip-right"><span class="chip-light green"></span> SHIELD ACTIVE</div>
+        <div class="art-caption"><span class="caption-wave">〰</span> DEFENSE LAYER <strong>01</strong></div>
+      </div>
+    </section>
+    <footer class="welcome-footer"><span>CYBERGUARD PROTOTYPE</span><span>PRIVACY FIRST <i></i> BUILT FOR AWARENESS</span></footer>
+  </main>
+
+  <!-- Main app screen: the tabs and controls are interactive -->
+  <main id="appScreen" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="brand-lockup sidebar-brand">
+        <div class="brand-mark"><span class="shield-symbol">◆</span></div>
+        <span>CYBER<span class="brand-accent">GUARD</span></span>
+      </div>
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="home"><span class="nav-icon">⌂</span> Overview</button>
+        <button class="nav-item" data-view="scan"><span class="nav-icon">⌕</span> Threat Scanner <span class="nav-tag">LIVE</span></button>
+        <button class="nav-item" data-view="tools"><span class="nav-icon">▦</span> Protection Tools</button>
+        <button class="nav-item" data-view="alerts"><span class="nav-icon">♧</span> Alerts Log <span id="alertNavCount" class="count-badge">3</span></button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-status">
+        <div class="status-shield">✓</div>
+        <div><strong>Protection status</strong><span><i class="status-dot"></i> Demo systems online</span></div>
+      </div>
+      <div class="sidebar-foot">CYBERGUARD v1.0 <span>EDUCATIONAL DEMO</span></div>
+    </aside>
+
+    <section class="main-area">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow small-eyebrow">MOBILE SECURITY CENTER</p>
+          <h2 id="pageTitle">Security overview</h2>
+        </div>
+        <div class="topbar-actions">
+          <div class="system-status"><span class="status-dot"></span> All systems operational</div>
+          <button id="headerAlertsBtn" class="icon-button" aria-label="Open alerts" title="Open alerts">♧<span class="notification-dot"></span></button>
+          <div class="avatar">CG</div>
+        </div>
+      </header>
+
+      <section id="view-home" class="page-view">
+        <div class="welcome-banner">
+          <div>
+            <div class="banner-label"><span class="status-dot"></span> YOUR DIGITAL SHIELD IS ACTIVE</div>
+            <h3>Stay alert. Stay protected.</h3>
+            <p>Review your demo security status and check suspicious links before opening them.</p>
+            <button class="outline-button" data-go="scan">Scan a URL <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="banner-art"><div class="banner-orbit"></div><div class="banner-shield">✓</div><span class="banner-spark spark-a"></span><span class="banner-spark spark-b"></span></div>
+        </div>
+
+        <div class="section-heading"><div><p class="eyebrow small-eyebrow">AT A GLANCE</p><h3>Protection overview</h3></div><span class="updated-label"><span class="status-dot"></span> Updated just now</span></div>
+        <div class="metric-grid">
+          <article class="metric-card score-card">
+            <div class="metric-top"><span>Security score</span><span class="metric-icon cyan-icon">◉</span></div>
+            <div class="score-layout">
+              <div class="score-gauge"><div class="gauge-inner"><strong id="scoreValue">100</strong><span>OUT OF 100</span></div></div>
+              <div class="score-details"><span class="score-pill">EXCELLENT</span><p>Your demo protection checks look good.</p><small>Last scan: just now</small></div>
+            </div>
+          </article>
+          <article class="metric-card"><div class="metric-top"><span>Threats flagged</span><span class="metric-icon red-icon">⌁</span></div><div class="metric-number" id="threatCount">03</div><div class="metric-foot"><span class="red-text">●</span> Demo alerts recorded <span class="foot-line"></span></div></article>
+          <article class="metric-card"><div class="metric-top"><span>Protection tools</span><span class="metric-icon green-icon">♢</span></div><div class="metric-number">03<span class="number-unit">/03</span></div><div class="metric-foot"><span class="green-text">● All enabled</span><span class="foot-line"></span></div></article>
+        </div>
+
+        <div class="content-grid">
+          <section class="panel quick-scan-panel">
+            <div class="panel-heading"><div><p class="eyebrow small-eyebrow">QUICK ACTION</p><h3>Check a suspicious link</h3></div><span class="panel-icon">⌕</span></div>
+            <p class="panel-description">Paste a URL to run a local, rule-based educational check.</p>
+            <form id="quickScanForm" class="scan-form">
+              <label for="quickUrl" class="sr-only">URL to check</label>
+              <span class="input-prefix">↗</span>
+              <input id="quickUrl" type="text" placeholder="https://example.com" autocomplete="off" spellcheck="false" />
+              <button class="primary-button scan-submit" type="submit">Analyze <span>→</span></button>
+            </form>
+            <div class="sample-links"><span>TRY A SAMPLE:</span><button type="button" data-sample-url="https://example.com">Normal example</button><button type="button" data-sample-url="http://verify-bank-account.example.test">Suspicious example</button></div>
+            <div id="quickScanResult" class="scan-result hidden" aria-live="polite"></div>
+          </section>
+
+          <section class="panel protection-panel">
+            <div class="panel-heading"><div><p class="eyebrow small-eyebrow">DEFENSE STATUS</p><h3>Active protection</h3></div><span class="status-live"><i class="status-dot"></i> DEMO</span></div>
+            <div class="protection-row"><span class="protection-symbol vpn-symbol">⌁</span><div class="protection-info"><strong>VPN activity</strong><small>Private connection simulation</small></div><span class="state-label">ACTIVE</span></div>
+            <div class="protection-row"><span class="protection-symbol firewall-symbol">♨</span><div class="protection-info"><strong>Firewall</strong><small>Network defense simulation</small></div><span class="state-label">ON</span></div>
+            <div class="protection-row"><span class="protection-symbol shield-symbol-small">✓</span><div class="protection-info"><strong>Real-time protection</strong><small>Awareness checks enabled</small></div><span class="state-label">RUNNING</span></div>
+            <button class="text-button" data-go="tools">Manage protection tools <span>→</span></button>
+          </section>
+        </div>
+
+        <section class="panel recent-panel">
+          <div class="panel-heading"><div><p class="eyebrow small-eyebrow">ACTIVITY FEED</p><h3>Recent alerts</h3></div><button class="text-button" data-go="alerts">View all alerts <span>→</span></button></div>
+          <div id="homeAlertList" class="alert-list compact-alert-list"></div>
+        </section>
+      </section>
+
+      <section id="view-scan" class="page-view hidden">
+        <div class="page-intro"><div><p class="eyebrow small-eyebrow">THREAT ANALYSIS LAB</p><h3>Suspicious link analyzer</h3><p>Check for common warning signs before you open a link. The analysis runs in your browser.</p></div><div class="intro-shield">⌕</div></div>
+        <div class="panel analyzer-panel">
+          <div class="analyzer-tabs"><button class="analyzer-tab active" data-analyzer="url">URL CHECKER</button><button class="analyzer-tab" data-analyzer="sms">SMS MESSAGE CHECKER</button></div>
+          <form id="analyzerForm">
+            <label id="analyzerLabel" for="analyzerInput">Paste the URL you want to inspect</label>
+            <textarea id="analyzerInput" rows="3" placeholder="Example: https://example.com" spellcheck="false"></textarea>
+            <div class="form-actions"><span class="form-hint"><span>ⓘ</span> Never paste passwords, OTPs, or private data.</span><button class="primary-button" type="submit">Run analysis <span>→</span></button></div>
+          </form>
+          <div id="analyzerResult" class="analysis-result hidden" aria-live="polite"></div>
+          <div class="sample-scenarios"><span class="sample-title">LOAD A SAFE TEST CASE</span><button type="button" data-load-case="normal">Normal URL</button><button type="button" data-load-case="suspicious">Suspicious URL</button><button type="button" data-load-case="sms">Phishing SMS</button></div>
+        </div>
+        <div class="notice-card"><span class="notice-icon">ⓘ</span><p><strong>Important:</strong> This is a classroom demonstration using simple patterns, not a live reputation service. A low-risk result does not prove that a website is safe.</p></div>
+      </section>
+
+      <section id="view-tools" class="page-view hidden">
+        <div class="page-intro"><div><p class="eyebrow small-eyebrow">DEVICE DEFENSE</p><h3>Protection tools</h3><p>Explore simulated security controls and see what each one is designed to protect.</p></div><div class="intro-shield">♢</div></div>
+        <div class="tools-grid">
+          <article class="tool-card"><div class="tool-icon vpn-icon">⌁</div><div class="tool-copy"><div class="tool-title-line"><h4>VPN activity</h4><span class="tool-state">SIMULATED</span></div><p>Represents encrypted traffic to a trusted network. This demo does not create a VPN connection.</p><div class="tool-bottom"><span class="tool-status-text" data-status-for="vpn">Enabled in demo</span><label class="toggle"><input type="checkbox" data-tool="vpn" checked aria-label="Toggle VPN demo"><span class="toggle-slider"></span></label></div></div></article>
+          <article class="tool-card"><div class="tool-icon firewall-icon">♨</div><div class="tool-copy"><div class="tool-title-line"><h4>Firewall</h4><span class="tool-state">SIMULATED</span></div><p>Illustrates how network rules can help limit unwanted connections.</p><div class="tool-bottom"><span class="tool-status-text" data-status-for="firewall">Enabled in demo</span><label class="toggle"><input type="checkbox" data-tool="firewall" checked aria-label="Toggle firewall demo"><span class="toggle-slider"></span></label></div></div></article>
+          <article class="tool-card"><div class="tool-icon realtime-icon">✓</div><div class="tool-copy"><div class="tool-title-line"><h4>Real-time protection</h4><span class="tool-state">SIMULATED</span></div><p>Demonstrates the concept of continuously checking for suspicious activity.</p><div class="tool-bottom"><span class="tool-status-text" data-status-for="realtime">Enabled in demo</span><label class="toggle"><input type="checkbox" data-tool="realtime" checked aria-label="Toggle real-time protection demo"><span class="toggle-slider"></span></label></div></div></article>
+          <article class="tool-card"><div class="tool-icon privacy-icon">▣</div><div class="tool-copy"><div class="tool-title-line"><h4>Privacy checkup</h4><span class="tool-state">GUIDE</span></div><p>Review app permissions and remove access an app does not need.</p><div class="tool-bottom"><span class="tool-status-text">Open the checklist</span><button class="small-outline-button" id="privacyCheckBtn">View tips</button></div></div></article>
+        </div>
+        <div id="privacyTips" class="panel privacy-tips hidden"><h4>Mobile privacy checklist</h4><ul><li>Install apps from trusted stores.</li><li>Review camera, microphone, SMS, and location permissions.</li><li>Install security updates promptly.</li><li>Use a screen lock and multi-factor authentication.</li><li>Never share an OTP or banking PIN with anyone.</li></ul></div>
+      </section>
+
+      <section id="view-alerts" class="page-view hidden">
+        <div class="page-intro"><div><p class="eyebrow small-eyebrow">SECURITY ACTIVITY</p><h3>Alerts log</h3><p>View events created inside this educational prototype.</p></div><div class="intro-shield">♧</div></div>
+        <div class="panel alerts-panel">
+          <div class="alert-controls"><div class="filter-group" role="group" aria-label="Filter alerts"><button class="filter-button active" data-filter="all">All alerts</button><button class="filter-button" data-filter="high">High risk</button><button class="filter-button" data-filter="info">Info</button></div><button id="clearAlertsBtn" class="small-outline-button">Clear demo log</button></div>
+          <div id="fullAlertList" class="alert-list full-alert-list"></div>
+          <div id="emptyAlerts" class="empty-state hidden"><div class="empty-icon">✓</div><h4>No alerts to display</h4><p>Your demo alert log is clear. Run a sample analysis to create a new event.</p><button class="outline-button" data-go="scan">Run a scan</button></div>
+        </div>
+      </section>
+
+      <footer class="app-footer"><span>© 2026 CYBERGUARD AWARENESS PROJECT</span><span><i class="status-dot"></i> FRONT-END SIMULATION <span class="footer-separator">/</span> NO DEVICE ACCESS</span></footer>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
